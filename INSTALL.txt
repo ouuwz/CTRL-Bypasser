@@ -1,0 +1,10 @@
+CTRL Bypasser v1.0.1 — Part 1
+
+1. Extract this archive.
+2. Open edge://extensions or chrome://extensions.
+3. Enable Developer mode.
+4. Click Load unpacked and select this folder.
+5. Enable the extension on a site you are authorized to test.
+
+Feature in this part: Shortcut conflict protection.
+All parts include the uninstall redirect to https://github.com/ouuwz.

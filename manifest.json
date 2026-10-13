@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "CTRL Bypasser",
+  "version": "1.0.1",
+  "description": "Core copy, cut and paste helpers for Monaco, CodeMirror 5 and Ace, with native shortcut conflict protection.",
+  "author": "ouuwz",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_title": "CTRL Bypasser",
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  }
+}

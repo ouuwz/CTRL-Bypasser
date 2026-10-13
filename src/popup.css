@@ -1,0 +1,45 @@
+* { box-sizing: border-box; }
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #111214;
+  color: #f1f1f2;
+}
+body { margin: 0; width: 320px; background: #111214; color: #f1f1f2; }
+main { padding: 17px; }
+header { display: flex; align-items: center; gap: 11px; margin-bottom: 18px; }
+.mark {
+  display: grid; place-items: center; width: 36px; height: 36px; flex: 0 0 36px;
+  border: 1px solid #34363a; border-radius: 9px; background: #1b1c1f;
+  color: #f0f0f1; font-size: 19px; font-weight: 650;
+}
+.heading { min-width: 0; }
+h1 { font-size: 14px; margin: 0 0 3px; font-weight: 650; letter-spacing: -.2px; }
+header p { margin: 0; font-size: 11px; color: #999ba1; }
+.site { padding: 12px; border: 1px solid #303237; border-radius: 9px; background: #17181b; margin-bottom: 11px; }
+.eyebrow { color: #9b9da4; font-size: 9px; font-weight: 700; letter-spacing: .9px; }
+.origin { margin-top: 7px; font-size: 12px; overflow-wrap: anywhere; line-height: 1.45; color: #f0f0f1; }
+.status { color: #a5a6ad; font-size: 11px; margin-top: 7px; line-height: 1.45; }
+button { border: 1px solid #e6e6e8; border-radius: 7px; padding: 10px 12px; font-size: 12px; font-weight: 650; cursor: pointer; background: #e6e6e8; color: #18191b; }
+#toggle { width: 100%; }
+button:hover:not(:disabled) { background: #fff; }
+button:focus-visible, a:focus-visible { outline: 2px solid #c7d2fe; outline-offset: 2px; }
+button:disabled { opacity: .48; cursor: default; }
+.privacy { color: #8f9198; font-size: 10px; line-height: 1.55; margin: 11px 1px 14px; }
+.sites { margin: 12px 0 14px; border-top: 1px solid #2c2e32; padding-top: 12px; }
+.sites-heading { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px; }
+.sites-heading strong { font-size: 11px; font-weight: 650; }
+.sites-heading span, .empty-sites { color: #92949b; font-size: 10px; }
+.site-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 0; border-top: 1px solid #26282c; }
+.site-name { min-width: 0; overflow-wrap: anywhere; color: #d9d9dc; font-size: 10px; line-height: 1.4; }
+.remove-site { flex: 0 0 auto; padding: 5px 7px; border: 1px solid #393b40; background: #1a1b1e; color: #c9cacf; font-size: 10px; font-weight: 550; }
+.remove-site:hover:not(:disabled) { background: #292a2e; }
+footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #292b30; padding-top: 11px; font-size: 10px; color: #8f9198; }
+a { color: #e3e3e6; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.version { padding: 2px 0 2px 8px; border: 0; background: transparent; color: #8f9198; font: inherit; }
+.version:hover { background: transparent; color: #e3e3e6; }
+.dev-panel { margin-top: 13px; padding-top: 12px; border-top: 1px solid #292b30; }
+.dev-title { font-size: 11px; font-weight: 650; margin-bottom: 8px; }
+.secondary { width: 100%; background: #1b1c20; color: #eee; border-color: #383a40; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 150px; overflow: auto; padding: 9px; border-radius: 7px; background: #17181b; color: #d3d5dc; font-size: 10px; }

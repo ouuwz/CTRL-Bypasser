@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CTRL Bypasser</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="mark" aria-hidden="true">⌘</div>
+      <div class="heading">
+        <h1>CTRL Bypasser</h1>
+        <p>Clipboard support for code editors</p>
+      </div>
+    </header>
+    <section class="site" aria-labelledby="currentSiteLabel">
+      <span id="currentSiteLabel" class="eyebrow">CURRENT SITE</span>
+      <div id="origin" class="origin">Checking current tab…</div>
+      <div id="status" class="status">Checking site access…</div>
+    </section>
+    <button id="toggle" disabled>Enable on this site</button>
+    <p class="privacy">Only runs on sites you enable. Clipboard text is not saved or sent anywhere.</p>
+    <footer>
+      <span>Made by <a href="https://github.com/ouuwz" target="_blank" rel="noreferrer">ouuwz</a></span>
+      <button id="version" class="version" type="button" aria-label="Extension version">v1.0.1</button>
+    </footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
