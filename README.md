@@ -6,7 +6,7 @@
 **Project:** CTRL Bypasser  
 **Version:** 1.0.1  
 **License:** See [`LICENSE`](LICENSE)  
-**Project type:** Educational / Experimental Browser Extension
+**Project type:** Experimental Browser Extension
 
 ---
 
