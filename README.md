@@ -4,7 +4,7 @@
 
 **Developed by:** [ouuwz](https://github.com/ouuwz)  
 **Project:** CTRL Bypasser  
-**Version:** 1.1.2  
+**Version:** 1.0.1  
 **License:** See [`LICENSE`](LICENSE)  
 **Project type:** Educational / Experimental Browser Extension
 
