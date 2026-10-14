@@ -6,8 +6,8 @@
 **Project:** CTRL Bypasser  
 **Version:** 1.0.1  
 **License:** See [`LICENSE`](LICENSE)  
-**Project type:** Experimental Browser Extension
-**Join the TG Channel for Updates:** https://t.me/ctrlbypasser
+**Project type:** Experimental Browser Extension  
+**Join the TG Channel for Updates:** https://t.me/ctrlbypasser  
 Joining channel is necessary, you might miss some updates!!
 ---
 
