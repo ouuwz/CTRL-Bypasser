@@ -4,10 +4,10 @@
 
 **Developer:** [ouuwz](https://github.com/ouuwz)  
 **Project:** CTRL Bypasser  
-**Version:** 1.0.1  
-**Join for Updates:** [CTRL Bypasserl](https://t.me/ctrlbypasser)  
+**Join for Updates:** [CTRL Bypasser](https://t.me/ctrlbypasser)  
 Joining channel is necessary, you might miss some updates!!
 ---
+Latest **Version:** 1.0.1  
 
 ## Overview
 
