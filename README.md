@@ -4,15 +4,16 @@
 
 # CTRL Bypasser
 
-**Clipboard shortcut compatibility for web-based code editors**
+**Clipboard shortcut support for web-based code editors**
 
-Copy, cut, and paste compatibility experiments for supported editors, with a small browser-extension popup.
+Having trouble with copy, cut, or paste in a web editor? CTRL Bypasser is an experimental browser extension that tries to improve shortcut compatibility in supported editors.
 
-[![Version](https://img.shields.io/badge/version-1.0.1-6d5dfc?style=flat-square)](https://github.com/ouuwz)
-[![Manifest](https://img.shields.io/badge/Manifest-V3-20232a?style=flat-square)](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3)
-[![Developer](https://img.shields.io/badge/developer-ouuwz-111827?style=flat-square)](https://github.com/ouuwz)
+[![Version](https://img.shields.io/badge/version-1.0.1-8bcf68?style=flat-square)](https://github.com/ouuwz)
+[![Manifest](https://img.shields.io/badge/Manifest-V3-8bcf68?style=flat-square)](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3)
+[![Developer](https://img.shields.io/badge/developer-ouuwz-8bcf68?style=flat-square)](https://github.com/ouuwz)
 
-[GitHub](https://github.com/ouuwz) · [Telegram updates](https://t.me/ctrlbypasser)
+[![GitHub](https://img.shields.io/badge/GitHub-ouuwz-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ouuwz)
+[![Telegram](https://img.shields.io/badge/Telegram-Updates-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/ctrlbypasser)
 
 </div>
 
@@ -20,139 +21,133 @@ Copy, cut, and paste compatibility experiments for supported editors, with a sma
 
 ## What it does
 
-Some web-based code editors handle keyboard shortcuts differently from ordinary text fields. Editor-specific handlers, page scripts, browser permissions, and site settings can all affect clipboard shortcuts.
+Copy, cut, and paste usually work with no fuss in a text field. Some online code editors handle these shortcuts differently because they use their own keyboard handlers or page-level scripts.
 
-CTRL Bypasser experiments with ways to improve **Ctrl+C**, **Ctrl+X**, and **Ctrl+V** compatibility in supported editors. Results depend on the browser, editor version, and website implementation. It will not work everywhere.
+CTRL Bypasser tests ways to make those shortcuts work more consistently in supported editors. Whether it works depends on the website, browser, editor version, and permissions available to the extension.
 
 ## Features
 
-- Copy, cut, and paste compatibility handling for supported editors
-- Detection of supported editor instances
-- Editor-specific integrations and fallback handling
-- Site-specific settings where supported by the installed build
-- A compact popup for extension controls
-- Attempts to avoid conflicts with unrelated keyboard shortcuts
-- An uninstall redirect to the developer's GitHub profile
+- **Copy, cut, and paste support** for compatible editor setups
+- **Editor detection** to identify supported editor instances
+- **Editor integrations** with fallback handling where available
+- **Site-specific settings** in builds that support them
+- **Popup controls** for quick access to extension settings
+- **Shortcut conflict handling** intended to avoid affecting unrelated keys
+- **Uninstall redirect** to the developer's GitHub profile
 
-These are best-effort features, not guarantees. The exact options available depend on the build you install.
+These features are best-effort. The extension cannot guarantee that every shortcut will work on every website.
 
 ## Supported editors
 
-| Editor | Integration | Status |
+| Editor | Integration | Compatibility |
 |---|---|---|
-| Monaco Editor | Editor-specific integration | Best effort |
-| CodeMirror 5 | Editor-specific integration | Best effort |
-| CodeMirror 6 | Fallback compatibility handling | Experimental |
-| Ace Editor | Editor-specific integration | Best effort |
+| Monaco Editor | Editor-specific handling | Best effort |
+| CodeMirror 5 | Editor-specific handling | Best effort |
+| CodeMirror 6 | Fallback handling | Experimental |
+| Ace Editor | Editor-specific handling | Best effort |
 
-A site may customize its editor, intercept keyboard events, or place it inside a frame. Those changes can prevent compatibility handling from working.
+Websites can customize editors, intercept keyboard events, or embed them in frames. Any of these can affect whether the extension works.
 
-## Install
+## Installation
 
-CTRL Bypasser can be loaded as an unpacked extension in a compatible Chromium-based browser, if browser policy permits it.
+You can load CTRL Bypasser as an unpacked extension in a compatible Chromium-based browser, as long as your browser or organization allows it.
 
 1. Download the project ZIP from the official repository or release.
-2. Extract the ZIP.
+2. Extract the ZIP file.
 3. Open `chrome://extensions` in Chrome, or `edge://extensions` in Microsoft Edge.
 4. Turn on **Developer mode**.
-5. Select **Load unpacked**.
-6. Choose the extracted folder that contains `manifest.json`.
-7. Pin the extension if you want quick access to its popup.
+5. Click **Load unpacked**.
+6. Select the extracted folder that contains `manifest.json`.
+7. Pin the extension if you want to open its popup quickly.
 
-Choose the folder containing `manifest.json`, not the ZIP file or an unrelated parent folder. Only install a build you trust, and review its code and requested permissions first.
+Make sure you select the folder containing `manifest.json`, not the ZIP file itself. Before installing, review the source code and permissions of the build you're using.
 
-## Use it
+## How to use it
 
-1. Open a site where you are allowed to use the extension.
-2. Focus a supported code editor and select some sample text.
-3. Test the standard copy, cut, and paste shortcuts.
-4. Open the popup to review the settings available in your build.
-5. If something behaves incorrectly, disable the extension on that site and reload the page.
+1. Open a website where you are allowed to use the extension.
+2. Click inside a supported code editor.
+3. Select a small piece of sample text.
+4. Try `Ctrl+C`, `Ctrl+X`, and `Ctrl+V`.
+5. Open the extension popup to check the available settings.
 
-Test with non-sensitive sample text before using it on important work.
+If the editor starts behaving strangely, disable the extension for that site and reload the page. Test with sample text before relying on it for important work.
 
 ## How it works
 
-At a high level, the extension:
+The extension looks for supported editors and uses editor-specific handling or fallback logic where available. It can also apply site settings in builds that include those options.
 
-1. Detects supported editor instances where its scripts can run.
-2. Observes relevant keyboard interactions.
-3. Uses editor-specific APIs or fallback handling when available.
-4. Applies supported settings for the current site.
-5. Remains subject to browser permissions and clipboard security rules.
+Clipboard access still follows the browser's security rules. Some operations require permission, a secure context, or a recent user action. Seeing a keyboard event fire does not necessarily mean the clipboard operation succeeded.
 
-Clipboard APIs can require a secure context, permission, or recent user interaction. A shortcut event firing does not prove that the clipboard operation succeeded.
+Useful background reading:
 
-Further reading:
 - [Chrome Extensions: Declare permissions](https://developer.chrome.com/docs/extensions/develop/concepts/declare-permissions)
 - [MDN: Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API)
 - [MDN: Clipboard access in extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard)
 
 ## Settings
 
-Where supported by your installed version:
+If your version includes site-specific settings, these are good starting points:
 
-- Enable compatibility features only on sites that need them.
-- Disable the extension on sites where it is unnecessary.
-- Review site-specific behavior before working with sensitive content.
-- Reset the site's settings if the editor starts behaving unexpectedly.
+- Enable the extension only on sites where you need it.
+- Turn it off on sites where it isn't useful.
+- Check the behavior before using it with sensitive content.
+- Reset the site's settings if an editor starts acting up.
 
-The exact configuration options vary by build.
+Available settings depend on the build you're using.
 
 ## Privacy and security
 
-CTRL Bypasser is intended to run as a local browser-extension utility. Its actual access and behavior depend on the source code, manifest permissions, browser, and site.
+CTRL Bypasser is intended to work as a local browser-extension utility. What it can access depends on its code, manifest permissions, browser, and the website it's running on.
 
-Before installing or updating it:
+Before installing a build, check `manifest.json` and review the scripts that run on webpages. If you're updating the extension, check for changes to permissions or network requests too.
 
-- Review the permissions in `manifest.json`.
-- Inspect the content scripts and any external network requests.
-- Avoid testing with passwords, tokens, private keys, financial details, or confidential code.
-- Re-check permissions and behavior when installing a new version.
-
-Do not assume that a build collects no data or makes no external requests without checking and testing that exact build.
+Avoid testing with passwords, access tokens, private keys, financial information, or confidential code. Don't assume a build collects no data or makes no external requests until you've checked the actual source.
 
 ## Responsible use
 
-Use CTRL Bypasser for legitimate usability testing, accessibility experiments, debugging, development, and learning about browser extensions.
+Use CTRL Bypasser for development, debugging, accessibility experiments, and learning how browser extensions and web editors handle keyboard shortcuts.
 
-Do not use it to circumvent exam or proctoring rules, evade organizational security controls, defeat website protections without authorization, or access information you are not allowed to use. Follow the rules of the website, institution, or organization involved.
+Don't use it to break exam or proctoring rules, evade an organization's security controls, or bypass website protections without permission. Always follow the rules that apply to the website or system you're using.
 
-## Limitations
+## Known limitations
 
-- Websites can intercept or override keyboard events.
-- Custom editor handlers may conflict with fallback logic.
-- Clipboard operations remain subject to browser security policies.
-- Cross-origin frames may be inaccessible to content scripts.
-- Browser or editor updates may break an integration.
-- Dynamically created or customized editors may not be detected.
-- Some websites prohibit extensions or interface modifications.
-- A shortcut event does not guarantee a successful clipboard operation.
+- A website may intercept or override keyboard events.
+- Custom editor shortcuts can conflict with fallback handling.
+- Clipboard access may be blocked by browser security rules.
+- Content scripts may not be able to access cross-origin frames.
+- Browser or editor updates can break an integration.
+- Dynamically created or heavily customized editors may not be detected.
+- Some websites do not allow extensions or interface changes.
+- A keyboard shortcut firing does not guarantee that the clipboard changed.
 
 ## Troubleshooting
 
-**The extension does not appear**
-- Confirm Developer mode is enabled.
+### The extension doesn't appear
+
+- Check that Developer mode is enabled.
 - Load the folder containing `manifest.json`.
-- Check the extension details page for manifest or script errors.
+- Look for errors on the extension details page.
 - Reload the extension after changing its files.
 
-**Copy, cut, or paste still fails**
-- Confirm the editor is supported and has focus.
-- Select a small amount of sample text.
-- Check browser clipboard permissions and security restrictions.
-- Inspect the browser console for errors.
-- Try a local test page to isolate site-specific behavior.
+### Copy, cut, or paste still doesn't work
 
-**The editor starts behaving incorrectly**
+- Make sure the editor is supported and has focus.
+- Select a small piece of test text.
+- Check the browser's clipboard permissions and security settings.
+- Look for errors in the browser console.
+- Try a local test page to see whether the problem is specific to the website.
+
+### The editor starts behaving strangely
+
 - Disable the extension on that site.
-- Reset its settings if available.
-- Reload the page and reproduce the issue with sample content.
+- Reset its settings if that option is available.
+- Reload the page and test again with sample content.
 
-**It stopped working after an update**
-- Check for browser or editor changes.
+### It stopped working after an update
+
+- Check whether the browser or editor has changed.
 - Review the release notes and reported issues.
-- Only test an older version if you can verify its source and safety.
+- Use an older version only if you can verify its source and safety.
 
 ## Development
 
@@ -163,9 +158,9 @@ Do not use it to circumvent exam or proctoring rules, evade organizational secur
 - Basic JavaScript knowledge
 - Browser developer tools
 
-### Typical project layout
+### Example project structure
 
-The exact file names may differ between releases. Check the extracted source for the actual structure.
+The layout below is an example. File names and folders may differ in the actual release.
 
 ```text
 CTRL-Bypasser/
@@ -181,42 +176,42 @@ CTRL-Bypasser/
 └── INSTALL.txt
 ```
 
-### Suggested workflow
+### Development workflow
 
-1. Inspect the manifest and declared permissions.
-2. Review the popup and editor integration scripts.
-3. Load the extension as unpacked.
-4. Test on a local page or an authorized development site.
+1. Check the manifest and its permissions.
+2. Read through the popup and editor integration scripts.
+3. Load the extension as an unpacked extension.
+4. Test it on a local page or a site where you have permission.
 5. Check the page console and extension service-worker logs.
-6. Re-test existing behavior after every change.
+6. Retest existing behavior after making changes.
 
-Do not assume automated tests are included unless they exist in the release.
+An automated test suite is not assumed to be included. Check the actual repository to see what tests are available.
 
 ## Contributing
 
-Bug reports and educational improvements are welcome. When opening an issue, include:
+Found a bug or want to improve something? Contributions and useful bug reports are welcome.
+
+When reporting a problem, include:
 
 - Browser and version
 - Extension version
 - Editor framework and version, if known
-- Steps to reproduce using non-sensitive sample content
-- Expected and actual behavior
-- Relevant console errors, with private data removed
+- Steps to reproduce the issue with sample text
+- What you expected and what happened instead
+- Relevant console errors, with private information removed
 
-Never include passwords, access tokens, private keys, confidential source code, or personal information in an issue.
-
-Keep permissions limited to what the extension needs, and avoid affecting unrelated websites.
+Please don't post passwords, access tokens, private keys, confidential code, or personal information in issues. Keep permissions limited to what the extension needs.
 
 ## License
 
-See the [`LICENSE`](LICENSE) file for the terms that apply to this project. If the repository does not include a license, clarify reuse and redistribution rights before sharing the code.
+See the [`LICENSE`](LICENSE) file for the license terms that apply to this project. If the repository has no license file, clarify the terms before reusing or redistributing the code.
 
 ## Credits
 
-**CTRL Bypasser** is created and maintained by [ouuwz](https://github.com/ouuwz).
+CTRL Bypasser is maintained by [ouuwz](https://github.com/ouuwz).
 
-Built as a learning project around browser extensions, JavaScript keyboard events, web-based code editors, and clipboard compatibility.
+The project explores browser-extension development, JavaScript keyboard events, web-based code editors, and clipboard compatibility.
 
 ---
 
-Use responsibly. Test carefully. Respect website policies. You are responsible for how you use the extension.
+Use the extension only where you're allowed to. Test carefully, and keep a copy of important work.
