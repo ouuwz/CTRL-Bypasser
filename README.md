@@ -2,12 +2,10 @@
 
 ### A browser extension for clipboard shortcut compatibility in web-based code editors
 
-**Developed by:** [ouuwz](https://github.com/ouuwz)  
+**Developer:** [ouuwz](https://github.com/ouuwz)  
 **Project:** CTRL Bypasser  
 **Version:** 1.0.1  
-**License:** See [`LICENSE`](LICENSE)  
-**Project type:** Experimental Browser Extension  
-**Join the TG Channel for Updates:** [Channel](https://t.me/ctrlbypasser)  
+**Join for Updates:** [CTRL Bypasserl](https://t.me/ctrlbypasser)  
 Joining channel is necessary, you might miss some updates!!
 ---
 
