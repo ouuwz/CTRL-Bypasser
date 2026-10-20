@@ -8,7 +8,7 @@
 
 Having trouble with copy, cut, or paste in a web editor? CTRL Bypasser is an experimental browser extension that tries to improve shortcut compatibility in supported editors.
 
-[![Version](https://img.shields.io/badge/version-1.0.1-8bcf68?style=flat-square)](https://github.com/ouuwz)
+[![Version](https://img.shields.io/badge/version-1.0.2-8bcf68?style=flat-square)](https://github.com/ouuwz)
 [![Manifest](https://img.shields.io/badge/Manifest-V3-8bcf68?style=flat-square)](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3)
 [![Developer](https://img.shields.io/badge/developer-ouuwz-8bcf68?style=flat-square)](https://github.com/ouuwz)
 
