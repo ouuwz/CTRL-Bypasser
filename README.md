@@ -171,6 +171,6 @@ See [`LICENSE`](LICENSE) for the terms that apply to this project. Third-party c
 
 Maintained by [ouuwz](https://github.com/ouuwz).
 
----
+-----
 
 Use the extension only where you have permission, test with sample text, and keep a copy of important work.
